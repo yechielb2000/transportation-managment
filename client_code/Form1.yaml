@@ -23,7 +23,7 @@ components:
     layout_properties: {grid_position: 'QNZILL,UNGPCM'}
     data_bindings: []
 - type: ColumnPanel
-  properties: {col_spacing: small, spacing_above: large, wrap_on: never, role: card, spacing_below: large, background: 'theme:Gray 50', foreground: 'theme:Gray 800'}
+  properties: {role: card, col_widths: '{}', spacing_above: large, background: 'theme:Gray 50', wrap_on: never, col_spacing: small, foreground: 'theme:Gray 800', spacing_below: large, visible: true}
   name: new_dirve_panel
   layout_properties: {slot: default}
   components:
@@ -31,39 +31,132 @@ components:
     properties: {role: headline, align: center, text: צור נסיעה חדשה, bold: false}
     type: Label
     layout_properties: {grid_position: 'YSYVMY,ICGTLT', full_width_row: false}
+  - name: end_date
+    properties: {pick_time: true, align: right, bold: false}
+    type: DatePicker
+    layout_properties: {grid_position: 'NVGWYD,BCQZVI'}
+  - name: end_date_label_copy
+    properties: {text: סוף נסיעה, align: left}
+    type: Label
+    layout_properties: {grid_position: 'NVGWYD,QVPYDD'}
   - name: start_date
     properties: {pick_time: true, align: right, bold: false}
     type: DatePicker
     layout_properties: {grid_position: 'NVGWYD,FLDVDI'}
     event_bindings: {change: start_date_change}
   - name: start_date_label
-    properties: {text: תחילת נסיעה}
+    properties: {text: תחילת נסיעה, align: left}
     type: Label
     layout_properties: {grid_position: 'NVGWYD,OXKUMK'}
-  - name: end_date
-    properties: {pick_time: true, align: right, bold: false}
-    type: DatePicker
-    layout_properties: {grid_position: 'NFQNRG,KOMZZC'}
-  - name: end_date_label_copy
-    properties: {text: סוף נסיעה}
+  - name: drive_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'LBMNDV,QOTRVX'}
+  - name: driver_label
+    properties: {text: נהג, align: left}
     type: Label
-    layout_properties: {grid_position: 'NFQNRG,GDEWTG'}
+    layout_properties: {grid_position: 'LBMNDV,GHCIYU'}
   - name: license_plate_textbox
     properties: {}
     type: TextBox
     layout_properties: {grid_position: 'LBMNDV,CBMKXQ'}
   - name: license_plate_label_copy
-    properties: {text: סוף נסיעה}
+    properties: {text: לוחית רישוי, align: left}
     type: Label
     layout_properties: {grid_position: 'LBMNDV,AJEEJB'}
-  - name: license_plate_textbox_copy
+  - name: car_seats_size_textbox
     properties: {}
     type: TextBox
-    layout_properties: {grid_position: 'YZXGFX,FSGSXU'}
-  - name: license_plate_label
-    properties: {text: סוף נסיעה}
+    layout_properties: {grid_position: 'UCMVWR,EXKWCC'}
+  - name: car_seats_size_label
+    properties: {text: גודל רכב (כיסאות), align: left}
     type: Label
-    layout_properties: {grid_position: 'IEYFQR,KVKQHS'}
+    layout_properties: {grid_position: 'UCMVWR,LIYGFX'}
+  - name: number_of_passengers_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'UCMVWR,MDIWUS'}
+  - name: number_of_passengers_label
+    properties: {text: מספר נוסעים, align: left}
+    type: Label
+    layout_properties: {grid_position: 'UCMVWR,JTHZAL'}
+  - name: customer_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'UPLHRG,VJKIGF VHRFFD,DJUIYS'}
+  - name: price_without_VAT_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'UPLHRG,VJKIGF SUHPUN,PLUUBU'}
+  - name: VAT_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'UPLHRG,VJKIGF ONCGEC,AKJJET'}
+  - name: price_including_VAT_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'UPLHRG,VJKIGF MSKHKE,URXFNC'}
+  - name: customer_label
+    properties: {text: שם מוסד / לקוח}
+    type: Label
+    layout_properties: {grid_position: 'UPLHRG,URNBXH RDYFFN,APSTEQ'}
+  - name: price_without_VAT_label
+    properties: {text: עלות ללא מעמ}
+    type: Label
+    layout_properties: {grid_position: 'UPLHRG,URNBXH AHOVUV,ETRMGB'}
+  - name: VAT_label
+    properties: {text: מעמ}
+    type: Label
+    layout_properties: {grid_position: 'UPLHRG,URNBXH IBSIDM,YRCXSA'}
+  - name: price_including_VAT_label
+    properties: {text: עלות עם מעמ}
+    type: Label
+    layout_properties: {grid_position: 'UPLHRG,URNBXH DKOLGT,VTKGZM'}
+  - name: accompanied_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'UPLHRG,UQRSRD FTSUHV,KNVIYA'}
+  - name: line_number_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'UPLHRG,UQRSRD FICMUG,NNLCNR'}
+  - name: fuel_cost_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'UPLHRG,UQRSRD UEBBQV,HRSOTV'}
+  - name: driver_cost_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'UPLHRG,UQRSRD QSYKKX,EGKATK'}
+  - name: accompanied_label
+    properties: {text: שם מלווה (אם יש)}
+    type: Label
+    layout_properties: {grid_position: 'UPLHRG,OKFJSW OHELWA,ETCZTE'}
+  - name: line_number_label
+    properties: {text: מספר קו (אם יש)}
+    type: Label
+    layout_properties: {grid_position: 'UPLHRG,OKFJSW WOCZZX,EBDOZN'}
+  - name: fuel_cost_label
+    properties: {text: עלות דלק}
+    type: Label
+    layout_properties: {grid_position: 'UPLHRG,OKFJSW IOLZAV,UAAVJD'}
+  - name: driver_cost_label
+    properties: {text: עלות נהג}
+    type: Label
+    layout_properties: {grid_position: 'UPLHRG,OKFJSW KJDDPU,OFWLQV'}
+  - name: is_regular_travel_checkbox
+    properties: {text: נסיעה קבועה, checked: false, align: center}
+    type: CheckBox
+    layout_properties: {grid_position: 'QJBCJX,YTDAYQ'}
+  - name: cancel_new_drive_button
+    properties: {text: בטל, bold: false}
+    type: Button
+    layout_properties: {grid_position: 'ISHAGF,TNPNDD'}
+    event_bindings: {click: cancel_new_drive_button_click}
+  - name: submit_new_drive_button
+    properties: {text: צור נסיעה חדשה, bold: true}
+    type: Button
+    layout_properties: {grid_position: 'ISHAGF,OTIQEJ'}
 - name: highlight_lable
   properties: {role: headline, bold: true, align: center, icon: 'fa:car', underline: false, icon_align: left_edge, spacing_below: small, visible: true, italic: false, text: מערכת ניהול היסעים}
   type: Label
