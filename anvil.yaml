@@ -42,7 +42,7 @@ exported_table_schema:
       admin_ui: {order: 1, width: 200}
   id: 1264
 name: Feedback Form 1
-startup_form: HomeForm
+startup_form: null
 correct_dependency_ids: {}
 renamed: true
 cta: {preset: feedback_form_welcome}
@@ -60,3 +60,4 @@ services:
 - source: /runtime/services/anvil/email.yml
   client_config: {}
   server_config: {}
+startup: {type: form, module: form}

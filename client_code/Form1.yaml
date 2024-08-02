@@ -1,0 +1,72 @@
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html', visible: true, background: 'theme:White'}
+components:
+- name: navigation_bar
+  properties: {wrap_on: never, spacing_above: small, background: 'theme:Gray 50', role: null, border: '', spacing_below: small, col_spacing: medium}
+  type: ColumnPanel
+  layout_properties: {slot: left-nav}
+  components:
+  - name: new_drive_button
+    properties: {role: raised, bold: false, align: full, spacing_above: small, background: 'theme:Gray 200', icon: 'fa:plus', icon_align: right, foreground: 'theme:Gray 800', spacing_below: small, italic: false, enabled: true, font_size: null, text: צור נסיעה חדשה}
+    type: Button
+    layout_properties: {grid_position: 'LXIDSV,NNBXWS'}
+    data_bindings: []
+    event_bindings: {click: new_drive_button_click}
+  - name: last_month_button
+    properties: {role: raised, bold: false, align: full, spacing_above: small, background: 'theme:Gray 200', icon: 'fa:calendar-check-o', icon_align: right, foreground: 'theme:Gray 800', spacing_below: small, italic: false, enabled: true, font_size: null, text: פריסה חודשית}
+    type: Button
+    layout_properties: {grid_position: 'JCJZFM,WDHPFK'}
+  - name: history_button
+    properties: {role: raised, bold: false, align: full, spacing_above: small, background: 'theme:Gray 200', icon: 'fa:history', icon_align: right, foreground: 'theme:Gray 800', spacing_below: small, italic: false, enabled: true, font_size: null, text: היסטורית נסיעות}
+    type: Button
+    layout_properties: {grid_position: 'QNZILL,UNGPCM'}
+    data_bindings: []
+- type: ColumnPanel
+  properties: {col_spacing: small, spacing_above: large, wrap_on: never, role: card, spacing_below: large, background: 'theme:Gray 50', foreground: 'theme:Gray 800'}
+  name: new_dirve_panel
+  layout_properties: {slot: default}
+  components:
+  - name: new_drive_label
+    properties: {role: headline, align: center, text: צור נסיעה חדשה, bold: false}
+    type: Label
+    layout_properties: {grid_position: 'YSYVMY,ICGTLT', full_width_row: false}
+  - name: start_date
+    properties: {pick_time: true, align: right, bold: false}
+    type: DatePicker
+    layout_properties: {grid_position: 'NVGWYD,FLDVDI'}
+    event_bindings: {change: start_date_change}
+  - name: start_date_label
+    properties: {text: תחילת נסיעה}
+    type: Label
+    layout_properties: {grid_position: 'NVGWYD,OXKUMK'}
+  - name: end_date
+    properties: {pick_time: true, align: right, bold: false}
+    type: DatePicker
+    layout_properties: {grid_position: 'NFQNRG,KOMZZC'}
+  - name: end_date_label_copy
+    properties: {text: סוף נסיעה}
+    type: Label
+    layout_properties: {grid_position: 'NFQNRG,GDEWTG'}
+  - name: license_plate_textbox
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'LBMNDV,CBMKXQ'}
+  - name: license_plate_label_copy
+    properties: {text: סוף נסיעה}
+    type: Label
+    layout_properties: {grid_position: 'LBMNDV,AJEEJB'}
+  - name: license_plate_textbox_copy
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'YZXGFX,FSGSXU'}
+  - name: license_plate_label
+    properties: {text: סוף נסיעה}
+    type: Label
+    layout_properties: {grid_position: 'IEYFQR,KVKQHS'}
+- name: highlight_lable
+  properties: {role: headline, bold: true, align: center, icon: 'fa:car', underline: false, icon_align: left_edge, spacing_below: small, visible: true, italic: false, text: מערכת ניהול היסעים}
+  type: Label
+  layout_properties: {slot: nav-right}
+  data_bindings: []
+  event_bindings: {show: highlight_lable_show}
